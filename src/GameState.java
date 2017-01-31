@@ -32,8 +32,7 @@ public class GameState {
 	{
 		double newCost = 0;
 		
-		
-		
+		Model.getTravelSpeed(nextLocation.getX(), nextLocation.getY());
 		
 		return newCost;
 	}

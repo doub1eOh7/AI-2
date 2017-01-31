@@ -52,15 +52,6 @@ public class Location {
 
 	}
 	
-	public double cost(Location nextLocation)
-	{
-		double cost = 0;
-		
-		Model.getTravelSpeed(nextLocation.getX(), nextLocation.getY());
-		
-		return cost;
-	}
-	
 	public int getX()
 	{
 		return this.x;
