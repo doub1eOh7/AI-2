@@ -25,5 +25,11 @@ class Agent {
 	public static void main(String[] args) throws Exception
 	{
 		Controller.playGame();
+		Location startCoordinates = new Location(0, 0);
+		GameState start = new GameState(0.0, null, startCoordinates);
+		Location goalCoordinates = new Location(12, 15);
+		GameState goal = new GameState(0.0, null, goalCoordinates);
+		UniformCostSearch search = new UniformCostSearch();
+		search.UniformCostSearch(start, goal);
 	}
 }
