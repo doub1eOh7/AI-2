@@ -3,10 +3,16 @@ public class GameState {
 	private double cost = 0.0;
 	private GameState parent;
 	private Location location;
+	public static Model model;
 	
 	GameState()
 	{
 		
+	}
+	
+	public static void initializeModel(Model newModel)
+	{
+		model = newModel;
 	}
 	
 	@Override public boolean equals(Object other)
@@ -28,12 +34,12 @@ public class GameState {
 	}
 	
 	//Compute Cost
-	public double computeCost(Location location2)
+	public double computeCost(Location nextLocation)
 	{
 		double newCost = 0;
-		
-		Model.getTravelSpeed(nextLocation.getX(), nextLocation.getY());
-		
+		Model tempModel = new Model(model);
+		newCost = tempModel.getTravelSpeed(nextLocation.getX(), nextLocation.getY());
+		newCost = 1 / newCost;
 		return newCost;
 	}
 	

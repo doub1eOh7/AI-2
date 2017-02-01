@@ -21,6 +21,12 @@ class Model {
 	Model(Controller c) {
 		this.controller = c;
 	}
+	
+	Model(Model m) {
+		this.controller = m.controller;
+		this.terrain = m.terrain;
+		this.sprites = m.sprites;
+	}
 
 	void initGame() throws Exception {
 		BufferedImage bufferedImage = ImageIO.read(new File("resources/terrain.png"));

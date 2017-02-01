@@ -27,13 +27,12 @@ public class UniformCostSearch {
 			for(Location child : nextStates)
 			{
 				//Compute Cost for each new state
-				double cost = s.getLocation().cost(child); // HOW TO FIND COST IF NO ACCESS TO MODEL
+				double cost = s.computeCost(child); // HOW TO FIND COST IF NO ACCESS TO MODEL
 				GameState validChild = new GameState(cost, s, child);
 				if(visited.contains(validChild))
 				{
-					validChild.prettyPrint();
 					GameState oldChild = visited.floor(validChild);
-					oldChild.prettyPrint();
+					
 				}
 				frontier.add(validChild);
 				
