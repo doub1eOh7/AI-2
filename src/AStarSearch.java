@@ -12,7 +12,7 @@ import java.awt.event.MouseEvent;
 
 import java.util.TreeSet;
 import java.util.ArrayList;
-public class UniformCostSearch {
+public class AStarSearch {
 	
 	TreeSet<GameState> frontier, visited;
 	
@@ -60,6 +60,7 @@ public class UniformCostSearch {
 				else
 				{
 					GameState newChild = new GameState(child.getCost(), s, child.getX(), child.getY());
+					newChild.setH(newChild.computeH(goalState.getX(), goalState.getY()));
 					frontier.add(newChild);
 					visited.add(newChild);
 					//System.out.println("Added new frontier");

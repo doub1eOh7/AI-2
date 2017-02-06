@@ -5,17 +5,19 @@ public class StateComparator implements Comparator<GameState> {
 
 	public int compare(GameState a, GameState b)
 	{
-		if(a.getCost() > b.getCost())
+		double cha = a.getCost() + a.getH();
+		double chb = b.getCost() + b.getH();
+		if(cha > chb)
 			return 1;
-		else if(a.getCost() < b.getCost())
+		else if(cha < chb)
 			return -1;
-		else if(a.getLocation().getX() > b.getLocation().getX())
+		else if(a.getX() > b.getX())
 			return 1;
-		else if(a.getLocation().getX() < b.getLocation().getX())
+		else if(a.getX() < b.getX())
 			return -1;
-		else if(a.getLocation().getY() > b.getLocation().getY())
+		else if(a.getY() > b.getY())
 			return 1;
-		else if(a.getLocation().getY() < b.getLocation().getY())
+		else if(a.getY() < b.getY())
 			return -1;
 		else
 			return 0;
